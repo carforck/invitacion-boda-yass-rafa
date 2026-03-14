@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#F8F4EE" />
+  <title>Yass & Rafa · 09.05.2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAV DOTS ── -->
+  <nav class="nav-dots" id="navDots" aria-label="Navegación por secciones">
+    <button class="nav-dot active" data-slice="0" aria-label="Apertura"></button>
+    <button class="nav-dot" data-slice="1" aria-label="Portada"></button>
+    <button class="nav-dot" data-slice="2" aria-label="Ceremonia"></button>
+    <button class="nav-dot" data-slice="3" aria-label="Recepción"></button>
+    <button class="nav-dot" data-slice="4" aria-label="Itinerario"></button>
+    <button class="nav-dot" data-slice="5" aria-label="Dress Code"></button>
+    <button class="nav-dot" data-slice="6" aria-label="Lluvia de Sobres"></button>
+    <button class="nav-dot" data-slice="7" aria-label="RSVP"></button>
+  </nav>
+
+  <!-- ── BOTÓN MÚSICA — soundwave ── -->
+  <button class="music-btn" id="musicBtn" aria-label="Reproducir / pausar música">
+    <div class="music-icon" aria-hidden="true">
+      <span class="music-icon-bar"></span>
+      <span class="music-icon-bar"></span>
+      <span class="music-icon-bar"></span>
+      <span class="music-icon-bar"></span>
+      <span class="music-icon-bar"></span>
+    </div>
+  </button>
+
+  <!-- ── MAP MODAL ── -->
+  <div class="map-overlay" id="mapOverlay" role="dialog" aria-modal="true" aria-label="Mapa de ubicación">
+    <div class="map-sheet">
+      <div class="map-sheet-handle"></div>
+      <div class="map-sheet-header">
+        <div class="map-sheet-title" id="mapTitle">Ubicación</div>
+        <button class="map-close-btn" id="mapCloseBtn">Cerrar</button>
+      </div>
+      <div class="map-iframe-wrap">
+        <iframe id="mapIframe" src="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Mapa"></iframe>
+      </div>
+      <p class="map-address-text" id="mapAddress"></p>
+      <a class="map-open-btn" id="mapExternalLink" href="#" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+        Abrir en Maps
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ -->
+  <div class="scroll-container" id="scrollContainer">
+
+    <section class="slice slice--apertura" id="slice-apertura">
+  <div class="apertura-texture"></div>
+
+  <div class="botanical-bg" aria-hidden="true">
+    <svg width="100%" height="100%" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M380 0C350 100 250 150 200 180M380 50C320 120 280 250 290 350" stroke="#708238" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="340" cy="80" r="15" fill="#708238" opacity="0.05"/>
+      <circle cx="210" cy="190" r="25" fill="#708238" opacity="0.05"/>
+      
+      <path d="M0 844C50 740 150 700 200 660M10 700C80 650 120 550 110 450" stroke="#708238" stroke-width="0.5" opacity="0.15"/>
+      <circle cx="60" cy="750" r="20" fill="#708238" opacity="0.05"/>
+    </svg>
+  </div>
+
+  <div class="apertura-content">
+    <div class="apertura-monogram-wrap fade-in">
+       <span class="mono-y">Y</span>
+       <span class="mono-amp">&amp;</span>
+       <span class="mono-r">R</span>
+    </div>
+
+    <p class="apertura-text intro-reveal">
+      La historia comienza cuando dos personas que ni soñaban conocerse terminan encontrándose en el instante menos esperado pero en el momento indicado
+    </p>
+
+    <div class="apertura-divider fade-in delay-2">
+      <div class="apertura-divider-line"></div>
+      <div class="diamond"></div>
+      <div class="apertura-divider-line"></div>
+    </div>
+
+    <p class="apertura-sub fade-in delay-3">Yass &amp; Rafa · 09.05.2026</p>
+  </div>
+
+  <div class="scroll-hint scroll-hint--dark">
+    <span class="scroll-hint-text">desliza</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
+</section>
+
+    <!-- SLICE 2: PORTADA -->
+    <section class="slice slice--portada" id="slice-portada">
+      <div class="portada-bg" style="background-image: url('assets/portada.png');"></div>
+      <div class="slice-overlay" style="background: rgba(22,18,10,0.45);"></div>
+
+      <div class="portada-content">
+        <p class="cover-eyebrow fade-in">Con alegría anunciamos</p>
+        <h1 class="cover-names fade-in delay-1">
+          Yass <span class="cover-ampersand">&amp;</span> Rafa
+        </h1>
+        <div class="cover-divider fade-in delay-2">
+          <div class="cover-divider-line"></div>
+          <div class="diamond"></div>
+          <div class="cover-divider-line"></div>
+        </div>
+        <p class="cover-date fade-in delay-3">Sábado, 9 de Mayo de 2026</p>
+        <p class="cover-time fade-in delay-3">4:00 de la tarde</p>
+
+        <div class="countdown-wrap fade-in delay-4" id="countdown">
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-days">--</div>
+            <div class="countdown-label">Días</div>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-hours">--</div>
+            <div class="countdown-label">Horas</div>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-mins">--</div>
+            <div class="countdown-label">Min</div>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <div class="countdown-num" id="cd-secs">--</div>
+            <div class="countdown-label">Seg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint scroll-hint--light">
+        <span class="scroll-hint-text">continúa</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SLICE 3: CEREMONIA -->
+    <section class="slice slice--img" id="slice-ceremonia" style="background-image: url('assets/img2.png');">
+      <div class="slice-overlay"></div>
+
+      <div class="location-icon-wrap fade-in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 22s-8-5.5-8-11a8 8 0 0 1 16 0c0 5.5-8 11-8 11z"/>
+          <circle cx="12" cy="11" r="3"/>
+        </svg>
+      </div>
+
+      <p class="slice-eyebrow slice-eyebrow--light fade-in delay-1">Nos unimos en</p>
+      <h2 class="slice-title slice-title--light fade-in delay-2">Ceremonia</h2>
+
+      <div class="location-card fade-in delay-3">
+        <p class="location-name">Parroquia Santa Catalina<br>de Alejandría</p>
+        <p class="location-address">Turbaco, Bolívar · Colombia</p>
+      </div>
+
+      <button class="btn-map btn-map--light fade-in delay-4" data-map="ceremony">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 22s-8-5.5-8-11a8 8 0 0 1 16 0c0 5.5-8 11-8 11z"/><circle cx="12" cy="11" r="2"/>
+        </svg>
+        Ver ubicación
+      </button>
+    </section>
+
+    <!-- SLICE 4: RECEPCIÓN -->
+    <section class="slice slice--img" id="slice-recepcion" style="background-image: url('assets/img3.png');">
+      <div class="slice-overlay" style="background: rgba(30,40,28,0.4);"></div>
+
+      <div class="location-icon-wrap fade-in">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+
+      <p class="slice-eyebrow slice-eyebrow--light fade-in delay-1">Continuamos celebrando en</p>
+      <h2 class="slice-title slice-title--light fade-in delay-2">Recepción</h2>
+
+      <div class="location-card fade-in delay-3">
+        <p class="location-name">Casa Finca Yoli</p>
+        <p class="location-address">Urb. El Zapote, Lote #36, Turbaco</p>
+      </div>
+
+      <button class="btn-map btn-map--light fade-in delay-4" data-map="reception">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 22s-8-5.5-8-11a8 8 0 0 1 16 0c0 5.5-8 11-8 11z"/><circle cx="12" cy="11" r="2"/>
+        </svg>
+        Ver ubicación
+      </button>
+    </section>
+
+    <!-- SLICE 5: ITINERARIO -->
+    <section class="slice slice--solid" id="slice-itinerario">
+      <p class="slice-eyebrow fade-in">El gran día</p>
+      <h2 class="slice-title fade-in delay-1">Itinerario</h2>
+
+      <div class="timeline">
+        <div class="timeline-item fade-in delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">16:00</div>
+          <div class="timeline-event">Ceremonia Religiosa</div>
+        </div>
+        <div class="timeline-item fade-in delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">18:00</div>
+          <div class="timeline-event">Cóctel de Bienvenida</div>
+        </div>
+        <div class="timeline-item fade-in delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">20:00</div>
+          <div class="timeline-event">Cena y Brindis</div>
+        </div>
+        <div class="timeline-item fade-in delay-4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">22:00</div>
+          <div class="timeline-event">¡Fiesta!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLICE 6: DRESS CODE -->
+    <section class="slice slice--solid slice--bone" id="slice-dresscode">
+      <p class="slice-eyebrow fade-in">Código de vestimenta</p>
+      <div class="dresscode-badge fade-in delay-1">Etiqueta</div>
+
+      <p class="dresscode-note fade-in delay-2">Colores reservados para los novios</p>
+
+      <div class="color-swatches fade-in delay-3">
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background:#FDFCFA; border:1.5px solid #D4C5AE;"></div>
+          <div class="swatch-label">Blanco</div>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background:#D4C5AE;"></div>
+          <div class="swatch-label">Beige</div>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch-circle" style="background:#708238;"></div>
+          <div class="swatch-label">Verde</div>
+        </div>
+      </div>
+
+      <div class="kids-note-card fade-in delay-4">
+        <p class="kids-note-text">
+          "Los niños son hermosos pero son más lindos en la casa durmiendo" 🌙<br><br>
+          Celebración exclusiva para adultos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLICE 7: LLUVIA DE SOBRES -->
+    <section class="slice slice--img slice--sobres-ajustado" id="slice-sobres" style="background-image: url('assets/final.png');">
+  <div class="slice-overlay slice-overlay--soft"></div>
+
+  <div class="sobres-card fade-in">
+    <div class="envelope-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    </div>
+    <h2 class="sobres-title">Lluvia de Sobres</h2>
+    <p class="sobres-description">
+      Su presencia es el regalo más grande. Si desean contribuir a nuestro nuevo comienzo, un sobre con su cariño será recibido con gratitud.
+    </p>
+  </div>
+</section>
+
+    <!-- SLICE 8: RSVP -->
+    <section class="slice slice--solid" id="slice-rsvp">
+      <div class="rsvp-wrap">
+        <p class="rsvp-badge fade-in" id="rsvpGreetingTop">Confirma tu asistencia</p>
+        <div class="rsvp-greeting fade-in delay-1" id="rsvpGreeting">¿Nos acompañas?</div>
+        <p class="rsvp-cupos fade-in delay-2" id="rsvpCupos"></p>
+
+        <div class="rsvp-card fade-in delay-3">
+          <form id="rsvpForm">
+            <div class="form-group">
+              <label class="form-label" for="guestName">Nombre completo</label>
+              <input class="form-input" type="text" id="guestName" placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guestPhone">WhatsApp</label>
+              <input class="form-input" type="tel" id="guestPhone" placeholder="+57 300 000 0000" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guestAttend">¿Asistirás?</label>
+              <select class="form-select" id="guestAttend" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="si">✓ Sí, ahí estaré</option>
+                <option value="no">✗ No podré asistir</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guestMsg">Mensaje para los novios</label>
+              <textarea class="form-textarea" id="guestMsg" placeholder="Opcional…"></textarea>
+            </div>
+            <button class="btn-rsvp" type="submit">Confirmar asistencia</button>
+          </form>
+
+          <div class="rsvp-success" id="rsvpSuccess" style="display:none;">
+            <div class="rsvp-success-icon">💌</div>
+            <p class="rsvp-success-title">¡Gracias!</p>
+            <p class="rsvp-success-text">Tu confirmación fue recibida.<br>Nos vemos el 9 de Mayo 🌿</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/musica.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
