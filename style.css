@@ -284,9 +284,56 @@ body {
 .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.2); border: none; }
 .nav-dot.active { background: var(--gold); transform: scale(1.5); }
 
-.music-btn { position: fixed; bottom: 20px; right: 20px; z-index: 100; width: 50px; height: 50px; border-radius: 50%; background: white; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; }
-.music-icon { display: flex; gap: 2px; align-items: flex-end; height: 15px; }
-.music-icon-bar { width: 2px; background: var(--gold); height: 100%; }
+.music-btn { 
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 100; 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  background: white; 
+  border: none; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; /* Para que se vea que es clickeable */
+}
+
+.music-icon { 
+  display: flex; 
+  gap: 2px; 
+  align-items: flex-end; 
+  height: 15px; 
+}
+
+.music-icon-bar { 
+  width: 2px; 
+  background: var(--gold); 
+  height: 100%; 
+  /* Añadimos la animación aquí */
+  animation: equalize 1s ease-in-out infinite;
+  transform-origin: bottom; /* La barra crece desde abajo hacia arriba */
+}
+
+/* Aplicamos diferentes retrasos (delays) para que no suban todas al tiempo */
+.music-icon-bar:nth-child(1) { animation-delay: 0.1s; }
+.music-icon-bar:nth-child(2) { animation-delay: 0.3s; }
+.music-icon-bar:nth-child(3) { animation-delay: 0.6s; }
+.music-icon-bar:nth-child(4) { animation-delay: 0.2s; }
+.music-icon-bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* La magia: definimos el movimiento */
+@keyframes equalize {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+/* OPCIONAL: Si quieres que se detenga cuando pauses la música */
+.music-btn.paused .music-icon-bar {
+  animation-play-state: paused;
+}
 
 /* Scroll Hint */
 .scroll-hint { position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
